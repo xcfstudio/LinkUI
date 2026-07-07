@@ -255,7 +255,7 @@ export const login = (password: string) => {
 #### 第一步：熟悉项目结构
 ```bash
 # 1. 克隆项目
-git clone https://github.com/linkui/linkui.git
+git clone https://github.com/xcfstudio/linkui.git
 
 # 2. 安装依赖
 cd LinkUI && pnpm install
