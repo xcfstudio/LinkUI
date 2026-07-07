@@ -470,7 +470,7 @@ const linxios = new Linxios({
 
 | 对比维度 | Link UI | 传统方案 |
 |----------|---------|----------|
-| 📦 **打包体积** | < 50KB | > 200KB |
+| 📦 **打包体积** | < 500KB | > 2MB |
 | ⚡ **启动速度** | < 500ms | > 2s |
 | 🧠 **内存占用** | 极低 | 较高 |
 | 🎨 **视觉设计** | Element Plus风格 | 陈旧落后 |
@@ -516,7 +516,7 @@ const linxios = new Linxios({
 
 - 📧 邮箱：hello@xcfstudio.com
 - 🌐 官网：https://linkui.xcfstudio.com
-- 📱 社区：https://github.com/xcfstudio/linkui/discussions
+- 📱 社区：https://github.com/xcfstudio/linkui
 
 ---
 
