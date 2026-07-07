@@ -1,0 +1,313 @@
+/**
+ * 尺寸变量文件 - size.scss
+ * 整理项目中可复用的尺寸，统一管理为CSS变量
+ * 
+ * 尺寸体系：
+ * 1. 间距变量（Spacing）- 用于margin、padding
+ * 2. 字体大小（Font Size）- 用于文字大小
+ * 3. 布局尺寸（Layout）- 容器、header、footer等高度宽度
+ * 4. 组件尺寸（Component）- 按钮、输入框、卡片等
+ * 5. 圆角变量（Border Radius）- 已在color.scss中，这里补充
+ * 6. 响应式断点（Breakpoints）- 移动端、平板、桌面端断点
+ */
+
+// ==================== 间距变量（Spacing）===================
+// 基于4px的倍数，形成统一的间距系统
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-2xl: 24px;
+$spacing-3xl: 32px;
+$spacing-4xl: 40px;
+$spacing-5xl: 48px;
+$spacing-6xl: 64px;
+
+// ==================== 字体大小（Font Size）===================
+// 从超小到大的字体尺寸
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-base: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 28px;
+$font-size-4xl: 32px;
+$font-size-5xl: 40px;
+
+// ==================== 字体行高（Line Height）===================
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+$line-height-loose: 2;
+
+// ==================== 布局尺寸（Layout）===================
+// 容器宽度
+$container-max-width: 1440px;
+$container-width: 1200px;
+$container-sm-width: 960px;
+
+// 布局高度
+$header-height: 80px;
+$header-height-mobile: 60px;
+$footer-height: 60px;
+$footer-height-mobile: 50px;
+
+// 侧边栏
+$sidebar-width: 240px;
+$sidebar-width-collapsed: 64px;
+
+// ==================== 组件尺寸（Component）===================
+// 按钮高度
+$button-height-sm: 32px;
+$button-height-base: 36px;
+$button-height-lg: 40px;
+$button-height-xl: 48px;
+
+// 按钮圆角
+$button-radius-sm: 4px;
+$button-radius-base: 6px;
+$button-radius-lg: 8px;
+$button-radius-full: 9999px;
+
+// 输入框
+$input-height-sm: 32px;
+$input-height-base: 36px;
+$input-height-lg: 40px;
+$input-radius: 6px;
+$input-border-width: 1px;
+
+// 卡片
+$card-radius: 8px;
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+// 头像
+$avatar-size-xs: 24px;
+$avatar-size-sm: 32px;
+$avatar-size-base: 40px;
+$avatar-size-lg: 48px;
+$avatar-size-xl: 64px;
+
+// Badge
+$badge-height: 20px;
+$badge-font-size: 12px;
+
+// ==================== 圆角变量（Border Radius）===================
+$radius-none: 0;
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
+$radius-2xl: 16px;
+$radius-full: 9999px;
+
+// ==================== 边框宽度（Border Width）===================
+$border-width-none: 0;
+$border-width-xs: 1px;
+$border-width-sm: 2px;
+$border-width-md: 3px;
+$border-width-lg: 4px;
+
+// ==================== 响应式断点（Breakpoints）===================
+// 基于常见设备尺寸
+$breakpoint-xs: 360px; // 超小屏幕 - 手机竖屏
+$breakpoint-sm: 480px; // 小屏幕 - 手机横屏
+$breakpoint-md: 650px; // 中等屏幕 - 平板竖屏
+$breakpoint-lg: 768px; // 大屏幕 - 平板横屏/小桌面
+$breakpoint-xl: 950px; // 超大屏幕 - 标准桌面
+$breakpoint-2xl: 1200px; // 2K屏幕
+$breakpoint-3xl: 1440px; // 大屏显示器
+
+// ==================== CSS变量映射 ====================
+:root {
+  // 间距变量
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+  --spacing-2xl: #{$spacing-2xl};
+  --spacing-3xl: #{$spacing-3xl};
+  --spacing-4xl: #{$spacing-4xl};
+  --spacing-5xl: #{$spacing-5xl};
+  --spacing-6xl: #{$spacing-6xl};
+
+  // 字体大小
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-md: #{$font-size-md};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+  --font-size-5xl: #{$font-size-5xl};
+
+  // 字体行高
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+  --line-height-loose: #{$line-height-loose};
+
+  // 布局尺寸
+  --container-max-width: #{$container-max-width};
+  --container-width: #{$container-width};
+  --container-sm-width: #{$container-sm-width};
+
+  --header-height: #{$header-height};
+  --header-height-mobile: #{$header-height-mobile};
+  --footer-height: #{$footer-height};
+  --footer-height-mobile: #{$footer-height-mobile};
+
+  --sidebar-width: #{$sidebar-width};
+  --sidebar-width-collapsed: #{$sidebar-width-collapsed};
+
+  // 组件尺寸
+  --button-height-sm: #{$button-height-sm};
+  --button-height-base: #{$button-height-base};
+  --button-height-lg: #{$button-height-lg};
+  --button-height-xl: #{$button-height-xl};
+
+  --button-radius-sm: #{$button-radius-sm};
+  --button-radius-base: #{$button-radius-base};
+  --button-radius-lg: #{$button-radius-lg};
+  --button-radius-full: #{$button-radius-full};
+
+  --input-height-sm: #{$input-height-sm};
+  --input-height-base: #{$input-height-base};
+  --input-height-lg: #{$input-height-lg};
+  --input-radius: #{$input-radius};
+  --input-border-width: #{$input-border-width};
+
+  --card-radius: #{$card-radius};
+  --card-shadow: #{$card-shadow};
+
+  --avatar-size-xs: #{$avatar-size-xs};
+  --avatar-size-sm: #{$avatar-size-sm};
+  --avatar-size-base: #{$avatar-size-base};
+  --avatar-size-lg: #{$avatar-size-lg};
+  --avatar-size-xl: #{$avatar-size-xl};
+
+  --badge-height: #{$badge-height};
+  --badge-font-size: #{$badge-font-size};
+
+  // 圆角变量
+  --radius-none: #{$radius-none};
+  --radius-xs: #{$radius-xs};
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-2xl: #{$radius-2xl};
+  --radius-full: #{$radius-full};
+
+  // 边框宽度
+  --border-width-none: #{$border-width-none};
+  --border-width-xs: #{$border-width-xs};
+  --border-width-sm: #{$border-width-sm};
+  --border-width-md: #{$border-width-md};
+  --border-width-lg: #{$border-width-lg};
+
+  // 响应式断点
+  --breakpoint-xs: #{$breakpoint-xs};
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
+  --breakpoint-2xl: #{$breakpoint-2xl};
+  --breakpoint-3xl: #{$breakpoint-3xl};
+}
+
+// ==================== SCSS Mixins（工具函数）===================
+// 响应式断点Mixin
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == xs {
+    @media screen and (max-width: #{$breakpoint-xs}) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media screen and (max-width: #{$breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media screen and (max-width: #{$breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media screen and (max-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media screen and (max-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  } @else if $breakpoint == 2xl {
+    @media screen and (max-width: #{$breakpoint-2xl}) {
+      @content;
+    }
+  } @else if $breakpoint == 3xl {
+    @media screen and (max-width: #{$breakpoint-3xl}) {
+      @content;
+    }
+  } @else if $breakpoint == min-xs {
+    @media screen and (min-width: #{$breakpoint-xs}) {
+      @content;
+    }
+  } @else if $breakpoint == min-sm {
+    @media screen and (min-width: #{$breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == min-md {
+    @media screen and (min-width: #{$breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == min-lg {
+    @media screen and (min-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == min-xl {
+    @media screen and (min-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  } @else if $breakpoint == min-2xl {
+    @media screen and (min-width: #{$breakpoint-2xl}) {
+      @content;
+    }
+  } @else if $breakpoint == min-3xl {
+    @media screen and (min-width: #{$breakpoint-3xl}) {
+      @content;
+    }
+  }
+}
+
+// 弹性居中Mixin
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 弹性两端对齐Mixin
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// 文本省略Mixin
+@mixin text-ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+  }
+}

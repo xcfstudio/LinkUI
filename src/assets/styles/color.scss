@@ -1,0 +1,354 @@
+/**
+ * 颜色变量文件 - 青蓝色调主题
+ * 支持明亮/黑暗两种模式
+ * 
+ * 颜色体系：
+ * 1. 基础色（Base）- 主色调、辅助色、状态色（两种模式共享）
+ * 2. 明亮模式（Light）- 浅色背景、深色文字
+ * 3. 黑暗模式（Dark）- 深色背景、浅色文字
+ * 4. CSS变量映射 - 通过 data-theme 属性切换
+ */
+
+// ==================== 基础色 - 主色调（青蓝色系）===================
+// 两种模式共享的主色调
+$primary-50: #f0f9ff; // 极浅青蓝 - 背景/悬停高亮
+$primary-100: #e0f2fe; // 浅青蓝 - 背景/卡片
+$primary-200: #bae6fd; // 淡青蓝 - 边框/分隔线
+$primary-300: #7dd3fc; // 中青蓝 - 图标/装饰
+$primary-400: #38bdf8; // 较深青蓝 - 按钮/交互元素
+$primary-500: #0ea5e9; // 主青蓝 - 品牌色/主要按钮
+$primary-600: #0284c7; // 深青蓝 - 悬停状态/强调
+$primary-700: #0369a1; // 较深蓝 - 选中状态/重要文字
+$primary-800: #075985; // 深蓝 - 标题/重要信息
+$primary-900: #0c4a6e; // 极深蓝 - 深色背景文字
+
+// 主色调别名
+$primary: $primary-500;
+$primary-dark: $primary-700;
+$primary-light: $primary-100;
+
+// ==================== 基础色 - 辅助色（搭配色系）===================
+// 与青蓝色形成和谐搭配，用于点缀和强调
+
+// 暖色系点缀
+$accent-orange: #fb923c; // 活力橙 - 警告/提示
+$accent-orange-light: #ffedd5;
+$accent-orange-dark: #c2410c;
+
+$accent-coral: #f97316; // 珊瑚橙 - 强调/进度
+$accent-peach: #fb7185; // 桃粉色 - 柔和强调
+
+// 冷色系点缀
+$accent-teal: #14b8a6; // 青绿 - 成功/完成
+$accent-teal-light: #ccfbf1;
+$accent-teal-dark: #0d9488;
+
+$accent-violet: #8b5cf6; // 紫蓝 - 创意/特殊标签
+$accent-violet-light: #ede9fe;
+$accent-violet-dark: #7c3aed;
+
+// ==================== 明亮模式 - 中性色 ====================
+// 浅色背景、深色文字
+$light-white: #ffffff;
+$light-white-smoke: #fafafa;
+$light-snow: #f5f5f5;
+
+$light-gray-50: #f9fafb;
+$light-gray-100: #f3f4f6;
+$light-gray-200: #e5e7eb;
+$light-gray-300: #d1d5db;
+$light-gray-400: #9ca3af;
+$light-gray-500: #6b7280;
+$light-gray-600: #4b5563;
+$light-gray-700: #374151;
+$light-gray-800: #1f2937;
+$light-gray-900: #111827;
+
+// 明亮模式别名
+$light-text-primary: $light-gray-900;
+$light-text-secondary: $light-gray-600;
+$light-text-tertiary: $light-gray-400;
+$light-border-color: $light-gray-200;
+$light-bg-primary: $light-white;
+$light-bg-secondary: $light-gray-50;
+$light-bg-secondary-opacity-20: rgba(255, 255, 255, 0.2);
+$light-bg-secondary-opacity-40: rgba(255, 255, 255, 0.4);
+$light-bg-secondary-opacity-60: rgba(255, 255, 255, 0.6);
+$light-bg-secondary-opacity-80: rgba(255, 255, 255, 0.8);
+
+$light-bg-card: $light-white;
+$light-bg-card-secondary: #f5f7fa;
+
+// ==================== 黑暗模式 - 中性色 ====================
+// 深色背景、浅色文字
+$dark-white: #1f2937;
+$dark-white-smoke: #111827;
+$dark-snow: #0f172a;
+
+$dark-gray-50: #f9fafb;
+$dark-gray-100: #d1d5db;
+$dark-gray-200: #9ca3af;
+$dark-gray-300: #6b7280;
+$dark-gray-400: #4b5563;
+$dark-gray-500: #374151;
+$dark-gray-600: #2d3748;
+$dark-gray-700: #1f2937;
+$dark-gray-800: #111827;
+$dark-gray-900: #0f172a;
+
+// 黑暗模式别名
+$dark-text-primary: $dark-gray-100;
+$dark-text-secondary: $dark-gray-300;
+$dark-text-tertiary: $dark-gray-400;
+$dark-border-color: $dark-gray-600;
+$dark-bg-primary: $dark-gray-900;
+$dark-bg-secondary: $dark-gray-800;
+$dark-bg-secondary-opacity-20: rgba(0, 0, 0, 0.2);
+$dark-bg-secondary-opacity-40: rgba(0, 0, 0, 0.4);
+$dark-bg-secondary-opacity-60: rgba(0, 0, 0, 0.6);
+$dark-bg-secondary-opacity-80: rgba(0, 0, 0, 0.8);
+$dark-bg-card: $dark-gray-700;
+$dark-bg-card-secondary: #141d29;
+
+// ==================== 全局过渡效果 ====================
+// 为所有元素添加主题切换的平滑过渡
+* {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+html {
+  transition: background-color 0.3s ease;
+}
+
+// ==================== CSS变量映射 ====================
+// 通过 :root 和 [data-theme="dark"] 实现主题切换
+:root {
+  // 主色调
+  --primary-50: #{$primary-50};
+  --primary-100: #{$primary-100};
+  --primary-200: #{$primary-200};
+  --primary-300: #{$primary-300};
+  --primary-400: #{$primary-400};
+  --primary-500: #{$primary-500};
+  --primary-600: #{$primary-600};
+  --primary-700: #{$primary-700};
+  --primary-800: #{$primary-800};
+  --primary-900: #{$primary-900};
+  --primary: #{$primary};
+  --primary-dark: #{$primary-dark};
+  --primary-light: #{$primary-light};
+
+  // 辅助色
+  --accent-orange: #{$accent-orange};
+  --accent-orange-light: #{$accent-orange-light};
+  --accent-orange-dark: #{$accent-orange-dark};
+  --accent-coral: #{$accent-coral};
+  --accent-peach: #{$accent-peach};
+  --accent-teal: #{$accent-teal};
+  --accent-teal-light: #{$accent-teal-light};
+  --accent-teal-dark: #{$accent-teal-dark};
+  --accent-violet: #{$accent-violet};
+  --accent-violet-light: #{$accent-violet-light};
+  --accent-violet-dark: #{$accent-violet-dark};
+
+  // 中性色（明亮模式默认）
+  --gray-50: #{$light-gray-50};
+  --gray-100: #{$light-gray-100};
+  --gray-200: #{$light-gray-200};
+  --gray-300: #{$light-gray-300};
+  --gray-400: #{$light-gray-400};
+  --gray-500: #{$light-gray-500};
+  --gray-600: #{$light-gray-600};
+  --gray-700: #{$light-gray-700};
+  --gray-800: #{$light-gray-800};
+  --gray-900: #{$light-gray-900};
+
+  // 语义化变量（明亮模式默认）
+  --text-primary: #{$light-text-primary};
+  --text-secondary: #{$light-text-secondary};
+  --text-tertiary: #{$light-text-tertiary};
+  --border-color: #{$light-border-color};
+  --bg-primary: #{$light-bg-primary};
+  --bg-secondary: #{$light-bg-secondary};
+  --bg-secondary-opacity-20: #{$light-bg-secondary-opacity-20};
+  --bg-secondary-opacity-40: #{$light-bg-secondary-opacity-40};
+  --bg-secondary-opacity-60: #{$light-bg-secondary-opacity-60};
+  --bg-secondary-opacity-80: #{$light-bg-secondary-opacity-80};
+  --bg-card: #{$light-bg-card};
+  --bg-card-secondary: #{$light-bg-card-secondary};
+}
+
+// 黑暗模式样式
+[data-theme='dark'] {
+  // 中性色（黑暗模式）
+  --gray-50: #{$dark-gray-50};
+  --gray-100: #{$dark-gray-100};
+  --gray-200: #{$dark-gray-200};
+  --gray-300: #{$dark-gray-300};
+  --gray-400: #{$dark-gray-400};
+  --gray-500: #{$dark-gray-500};
+  --gray-600: #{$dark-gray-600};
+  --gray-700: #{$dark-gray-700};
+  --gray-800: #{$dark-gray-800};
+  --gray-900: #{$dark-gray-900};
+
+  // 语义化变量（黑暗模式）
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --text-tertiary: #{$dark-text-tertiary};
+  --border-color: #{$dark-border-color};
+  --bg-primary: #{$dark-bg-primary};
+  --bg-secondary: #{$dark-bg-secondary};
+  --bg-secondary-opacity-20: #{$dark-bg-secondary-opacity-20};
+  --bg-secondary-opacity-40: #{$dark-bg-secondary-opacity-40};
+  --bg-secondary-opacity-60: #{$dark-bg-secondary-opacity-60};
+  --bg-secondary-opacity-80: #{$dark-bg-secondary-opacity-80};
+  --bg-card: #{$dark-bg-card};
+  --bg-card-secondary: #{$dark-bg-card-secondary};
+}
+
+// ==================== 基础色 - 状态色（语义化颜色）===================
+// 两种模式共享的状态色
+
+// 成功
+$success-50: #f0fdf4; // 成功背景
+$success-100: #dcfce7; // 成功浅色
+$success-500: #22c55e; // 成功主色 - 完成/通过
+$success-600: #16a34a; // 成功深色
+$success: $success-500;
+
+// 警告
+$warning-50: #fffbeb; // 警告背景
+$warning-100: #fef3c7; // 警告浅色
+$warning-500: #f59e0b; // 警告主色 - 提示/注意
+$warning-600: #d97706; // 警告深色
+$warning: $warning-500;
+
+// 危险/错误
+$danger-50: #fef2f2; // 危险背景
+$danger-100: #fee2e2; // 危险浅色
+$danger-500: #ef4444; // 危险主色 - 错误/删除
+$danger-600: #dc2626; // 危险深色
+$danger: $danger-500;
+
+// 信息/提示
+$info-50: #eff6ff; // 信息背景
+$info-100: #dbeafe; // 信息浅色
+$info-500: #3b82f6; // 信息主色 - 提示/链接
+$info-600: #2563eb; // 信息深色
+$info: $info-500;
+
+// 状态色 CSS变量
+:root {
+  --success-50: #{$success-50};
+  --success-100: #{$success-100};
+  --success-500: #{$success-500};
+  --success-600: #{$success-600};
+  --success: #{$success};
+
+  --warning-50: #{$warning-50};
+  --warning-100: #{$warning-100};
+  --warning-500: #{$warning-500};
+  --warning-600: #{$warning-600};
+  --warning: #{$warning};
+
+  --danger-50: #{$danger-50};
+  --danger-100: #{$danger-100};
+  --danger-500: #{$danger-500};
+  --danger-600: #{$danger-600};
+  --danger: #{$danger};
+
+  --info-50: #{$info-50};
+  --info-100: #{$info-100};
+  --info-500: #{$info-500};
+  --info-600: #{$info-600};
+  --info: #{$info};
+}
+
+// ==================== 渐变色 - 预设渐变 ====================
+// 用于背景、按钮、装饰元素
+
+// 主色调渐变
+$gradient-primary: linear-gradient(135deg, $primary-400 0%, $primary-600 100%);
+$gradient-primary-light: linear-gradient(180deg, $primary-50 0%, $primary-100 100%);
+$gradient-sky: linear-gradient(180deg, #87ceeb 0%, $primary-500 100%);
+
+// 辅助渐变
+$gradient-orange: linear-gradient(135deg, $accent-orange 0%, $accent-coral 100%);
+$gradient-teal: linear-gradient(135deg, $accent-teal 0%, $primary-500 100%);
+$gradient-violet: linear-gradient(135deg, $accent-violet 0%, $primary-600 100%);
+
+// 深色渐变
+$gradient-dark: linear-gradient(180deg, $light-gray-800 0%, $light-gray-900 100%);
+$gradient-primary-dark: linear-gradient(135deg, $primary-700 0%, $primary-900 100%);
+
+// 渐变色 CSS变量
+:root {
+  --gradient-primary: #{$gradient-primary};
+  --gradient-primary-light: #{$gradient-primary-light};
+  --gradient-sky: #{$gradient-sky};
+  --gradient-orange: #{$gradient-orange};
+  --gradient-teal: #{$gradient-teal};
+  --gradient-violet: #{$gradient-violet};
+  --gradient-dark: #{$gradient-dark};
+  --gradient-primary-dark: #{$gradient-primary-dark};
+}
+
+// ==================== 透明度变量 ====================
+// 用于半透明效果
+$opacity-primary: rgba($primary, 0.1); // 主色10%透明
+$opacity-primary-20: rgba($primary, 0.2); // 主色20%透明
+$opacity-success: rgba($success, 0.1); // 成功色10%透明
+$opacity-warning: rgba($warning, 0.1); // 警告色10%透明
+$opacity-danger: rgba($danger, 0.1); // 危险色10%透明
+
+// 透明度 CSS变量
+:root {
+  --opacity-primary: #{$opacity-primary};
+  --opacity-primary-20: #{$opacity-primary-20};
+  --opacity-success: #{$opacity-success};
+  --opacity-warning: #{$opacity-warning};
+  --opacity-danger: #{$opacity-danger};
+}
+
+// ==================== 阴影变量 ====================
+// 预设阴影效果
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:
+  0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-primary: 0 4px 14px 0 rgba($primary, 0.3);
+
+// 阴影 CSS变量
+:root {
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+  --shadow-primary: #{$shadow-primary};
+}
+
+// 黑暗模式阴影
+[data-theme='dark'] {
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+// ==================== 圆角变量 ====================
+// 预设圆角大小
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-full: 9999px;
